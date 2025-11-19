@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valenta - Transport Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <style>
+        .shadow-3xl {
+            box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen bg-gradient-to-br from-sky-200 via-purple-200 to-violet-400">
+        <!-- Header -->
+        <header class="bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600 shadow-lg">
+            <div class="bg-gradient-to-r from-red-500 to-red-600 h-1"></div>
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md">
+                            <span class="text-2xl font-bold text-amber-600">V</span>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold text-white">VALENTOR</h1>
+                            <p class="text-sm text-yellow-100">Transport Solutions</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden md:flex items-center space-x-6">
+                        <div class="flex items-center space-x-2 bg-white/20 rounded-full px-4 py-2">
+                            <i data-lucide="award" class="w-5 h-5 text-white"></i>
+                            <span class="text-white font-semibold"><span id="header-points">1250</span> Kabiru</span>
+                            <span class="text-yellow-200 text-sm">(<span id="header-tier">Silver</span>)</span>
+                        </div>
+                        <button class="text-white hover:text-yellow-200 transition-colors">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                        </button>
+                        <button class="text-white hover:text-yellow-200 transition-colors">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+
+                    <button id="mobile-menu-btn" class="md:hidden text-white">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white shadow-lg border-t border-gray-200 hidden">
+            <div class="px-4 py-2 space-y-2">
+                <div class="flex items-center justify-between py-2">
+                    <span class="font-semibold">Kabiru Points</span>
+                    <span class="text-amber-600"><span id="mobile-points">1250</span> (<span id="mobile-tier">Silver</span>)</span>
+                </div>
+                <button class="flex items-center space-x-2 w-full py-2 text-left">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    <span>Contact Us</span>
+                </button>
+                <button class="flex items-center space-x-2 w-full py-2 text-left">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <span>Support</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 py-8">
+            <!-- Home Page -->
+            <div id="home-page">
+                <!-- Welcome Section -->
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">Welcome to VALENTOR</h2>
+                    <p class="text-xl text-gray-600 mb-8">Your one-stop solution for all transport bookings</p>
+                    <div class="bg-white/90 rounded-xl p-8 shadow-xl max-w-4xl mx-auto">
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i data-lucide="award" class="w-8 h-8 text-blue-600"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold mb-2">Earn Kabiru Points</h3>
+                                <p class="text-gray-600 text-sm">Get rewarded for every booking and unlock exclusive benefits</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i data-lucide="users" class="w-8 h-8 text-green-600"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold mb-2">Trusted Partners</h3>
+                                <p class="text-gray-600 text-sm">Work with verified local and international transport providers</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i data-lucide="clock" class="w-8 h-8 text-purple-600"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold mb-2">24/7 Support</h3>
+                                <p class="text-gray-600 text-sm">Our physical office provides assistance whenever you need it</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transport Mode Selector -->
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Choose Your Transport Mode</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <button onclick="showPage('air')" class="p-8 rounded-xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-2xl hover:shadow-3xl">
+                            <i data-lucide="plane" class="w-16 h-16 mx-auto mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-2">Air Transport</h3>
+                            <p class="text-white/80">Click to explore services</p>
+                        </button>
+                        <button onclick="showPage('land')" class="p-8 rounded-xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-2xl hover:shadow-3xl">
+                            <i data-lucide="bus" class="w-16 h-16 mx-auto mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-2">Land Transport</h3>
+                            <p class="text-white/80">Click to explore services</p>
+                        </button>
+                        <button onclick="showPage('water')" class="p-8 rounded-xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-2xl hover:shadow-3xl">
+                            <i data-lucide="ship" class="w-16 h-16 mx-auto mb-4"></i>
+                            <h3 class="text-2xl font-bold mb-2">Water Transport</h3>
+                            <p class="text-white/80">Click to explore services</p>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="grid md:grid-cols-4 gap-4 mb-8">
+                    <div class="bg-white/90 rounded-xl p-6 text-center shadow-lg">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">50+</div>
+                        <div class="text-gray-600">Transport Partners</div>
+                    </div>
+                    <div class="bg-white/90 rounded-xl p-6 text-center shadow-lg">
+                        <div class="text-3xl font-bold text-green-600 mb-2">10k+</div>
+                        <div class="text-gray-600">Happy Customers</div>
+                    </div>
+                    <div class="bg-white/90 rounded-xl p-6 text-center shadow-lg">
+                        <div class="text-3xl font-bold text-purple-600 mb-2">24/7</div>
+                        <div class="text-gray-600">Customer Support</div>
+                    </div>
+                    <div class="bg-white/90 rounded-xl p-6 text-center shadow-lg">
+                        <div class="text-3xl font-bold text-amber-600 mb-2">100%</div>
+                        <div class="text-gray-600">Secure Bookings</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Air Page -->
+            <div id="air-page" class="hidden">
+                <button onclick="showPage('home')" class="mb-6 flex items-center space-x-2 text-blue-600 hover:text-blue-800 transition-colors">
+                    <i data-lucide="navigation" class="w-5 h-5 transform rotate-180"></i>
+                    <span>Back to Home</span>
+                </button>
+
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="bg-white/90 rounded-xl p-6 shadow-xl">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                                <i data-lucide="plane" class="w-6 h-6 mr-2 text-blue-600"></i>
+                                Air Transport Services
+                            </h3>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                    <div class="flex items-center mb-2">
+                                        <i data-lucide="plane" class="w-5 h-5 text-blue-600 mr-2"></i>
+                                        <h4 class="font-semibold">Flight Bookings</h4>
+                                    </div>
+                                    <p class="text-gray-600 text-sm mb-2">Domestic & International flights</p>
+                                    <p class="text-xs text-green-600 mb-3">Partner: Skyscanner, Expedia</p>
+                                    <button onclick="handleBooking('Flight Bookings')" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors">
+                                        Choose Flight to Book
+                                    </button>
+                                </div>
+                                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                    <div class="flex items-center mb-2">
+                                        <i data-lucide="navigation" class="w-5 h-5 text-blue-600 mr-2"></i>
+                                        <h4 class="font-semibold">Cargo Freight</h4>
+                                    </div>
+                                    <p class="text-gray-600 text-sm mb-2">Air cargo services worldwide</p>
+                                    <p class="text-xs text-green-600 mb-3">Partner: DHL, FedEx</p>
+                                    <button onclick="handleBooking('Cargo Freight')" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors">
+                                        Choose Freight for Parcel/Cargo
+                                    </button>
+                                </div>
+                                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                    <div class="flex items-center mb-2">
+                                        <i data-lucide="map-pin" class="w-5 h-5 text-blue-600 mr-2"></i>
+                                        <h4 class="font-semibold">Hotel Bookings</h4>
+                                    </div>
+                                    <p class="text-gray-600 text-sm mb-2">Accommodations worldwide</p>
+                                    <p class="text-xs text-green-600 mb-3">Partner: Booking.com, Hotels.com</p>
+                                    <button onclick="handleBooking('Hotel Bookings')" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors">
+                                        Choose Hotel to Book
+                                    </button>
+                                </div>
+                                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                    <div class="flex items-center mb-2">
+                                        <i data-lucide="award" class="w-5 h-5 text-blue-600 mr-2"></i>
+                                        <h4 class="font-semibold">Safari Packages</h4>
+                                    </div>
+                                    <p class="text-gray-600 text-sm mb-2">Adventure and wildlife tours</p>
+                                    <p class="text-xs text-green-600 mb-3">Partner: Local Safari Operators</p>
+                                    <button onclick="handleBooking('Safari Packages')" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors">
+                                        Choose Safari to Book
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="air-sidebar"></div>
+                </div>
+            </div>
+
+            <!-- Land Page -->
+            <div id="land-page" class="hidden">
+                <button onclick="showPage('home')" class="mb-6 flex items-center space-x-2 text-green-600 hover:text-green-800 transition-colors">
+                    <i data-lucide="navigation" class="w-5 h-5 transform rotate-180"></i>
+                    <span>Back to Home</span>
+                </button>
+
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="bg-white/90 rounded-xl p-6 shadow-xl">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                                <i data-lucide="bus" class="w-6 h-6 mr-2 text-green-600"></i>
+                                Land Transport Services
+                            </h3>
+                            
+                            <!-- Local Transport Partners -->
+                            <div class="mb-8">
+                                <h4 class="text-xl font-semibold text-gray-800 mb-4">Our Local Partners</h4>
+                                <div class="grid md:grid-cols-2 gap-4" id="local-partners">
+                                    <!-- Partners will be populated by JavaScript -->
+                                </div>
+                            </div>
+
+                            <!-- Other Land Services -->
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                    <div class="flex items-center mb-2">
+                                        <i data-lucide="car" class="w-5 h-5 text-green-600 mr-2"></i>
+                                        <h4 class="font-semibold">Car Rental</h4>
+                                    </div>
+                                    <p class="text-xs text-green-600 mb-3">Partner: Avis, Hertz</p>
+                                    <button onclick="handleBooking('Car Rental')" class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition-colors">
+                                        Book Now
+                                    </button>
+                                </div>
+                                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                    <div class="flex items-center mb-2">
+                                        <i data-lucide="train" class="w-5 h-5 text-green-600 mr-2"></i>
+                                        <h4 class="font-semibold">Train Bookings</h4>
+                                    </div>
+                                    <p class="text-xs text-green-600 mb-3">Partner: Kenya Railways</p>
+                                    <button onclick="handleBooking('Train Bookings')" class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition-colors">
+                                        Book Now
+                                    </button>
+                                </div>
+                                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                    <div class="flex items-center mb-2">
+                                        <i data-lucide="navigation" class="w-5 h-5 text-green-600 mr-2"></i>
+                                        <h4 class="font-semibold">Taxi Services</h4>
+                                    </div>
+                                    <p class="text-xs text-green-600 mb-3">Partner: Uber, Bolt</p>
+                                    <button onclick="handleBooking('Taxi Services')" class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition-colors">
+                                        Book Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="land-sidebar"></div>
+                </div>
+            </div>
+
+            <!-- Water Page -->
+            <div id="water-page" class="hidden">
+                <button onclick="showPage('home')" class="mb-6 flex items-center space-x-2 text-cyan-600 hover:text-cyan-800 transition-colors">
+                    <i data-lucide="navigation" class="w-5 h-5 transform rotate-180"></i>
+                    <span>Back to Home</span>
+                </button>
+
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="bg-white/90 rounded-xl p-6 shadow-xl">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                                <i data-lucide="ship" class="w-6 h-6 mr-2 text-cyan-600"></i>
+                                Water Transport Services
+                            </h3>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                    <div class="flex items-center mb-2">
+                                        <i data-lucide="ship" class="w-5 h-5 text-cyan-600 mr-2"></i>
+                                        <h4 class="font-semibold">Ship Bookings</h4>
+                                    </div>
+                                    <p class="text-gray-600 text-sm mb-2">Ferry and cruise bookings</p>
+                                    <p class="text-xs text-green-600 mb-3">Partner: Likoni Ferry, Ocean Cruises</p>
+                                    <button onclick="handleBooking('Ship Bookings')" class="w-full bg-cyan-600 text-white py-2 rounded-md hover:bg-cyan-700 transition-colors">
+                                        Book Now
+                                    </button>
+                                </div>
+                                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                    <div class="flex items-center mb-2">
+                                        <i data-lucide="navigation" class="w-5 h-5 text-cyan-600 mr-2"></i>
+                                        <h4 class="font-semibold">Boat Rides</h4>
+                                    </div>
+                                    <p class="text-gray-600 text-sm mb-2">Lake and coastal boat rides</p>
+                                    <p class="text-xs text-green-600 mb-3">Partner: Local Boat Operators</p>
+                                    <button onclick="handleBooking('Boat Rides')" class="w-full bg-cyan-600 text-white py-2 rounded-md hover:bg-cyan-700 transition-colors">
+                                        Book Now
+                                    </button>
+                                </div>
+                                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                                    <div class="flex items-center mb-2">
+                                        <i data-lucide="trending-up" class="w-5 h-5 text-cyan-600 mr-2"></i>
+                                        <h4 class="font-semibold">Cargo Freight</h4>
+                                    </div>
+                                    <p class="text-gray-600 text-sm mb-2">Maritime cargo services</p>
+                                    <p class="text-xs text-green-600 mb-3">Partner: Shipping Companies</p>
+                                    <button onclick="handleBooking('Cargo Freight')" class="w-full bg-cyan-600 text-white py-2 rounded-md hover:bg-cyan-700 transition-colors">
+                                        Book Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="water-sidebar"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-8 mt-16">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">VALENTOR</h4>
+                        <p class="text-gray-300 text-sm">Your trusted transport booking partner across Air, Land, and Water.</p>
+                    </div>
+                    <div>
+                        <h5 class="font-semibold mb-3">Services</h5>
+                        <ul class="space-y-1 text-sm text-gray-300">
+                            <li>Flight Bookings</li>
+                            <li>Hotel Reservations</li>
+                            <li>Bus Transport</li>
+                            <li>Car Rental</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-semibold mb-3">Partners</h5>
+                        <ul class="space-y-1 text-sm text-gray-300">
+                            <li>Local Transport Companies</li>
+                            <li>International Airlines</li>
+                            <li>Hotel Chains</li>
+                            <li>Tour Operators</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-semibold mb-3">Contact</h5>
+                        <p class="text-gray-300 text-sm">Email: info@valentor.com</p>
+                        <p class="text-gray-300 text-sm">Phone: +254 XXX XXX XXX</p>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-400">
+                    <p>&copy; 2025 VALENTOR COMPANY HOLDINGS. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // App State
+        let currentPage = 'home';
+        let isMenuOpen = false;
+        let userPoints = 1250;
+
+        const localTransportCompanies = [
+            { name: 'Ena Coach', services: ['Bookings', 'Parcel'], rating: 4.5, commission: '8%' },
+            { name: 'Easy Coach', services: ['Bookings', 'Parcel'], rating: 4.7, commission: '7%' },
+            { name: 'Team Swatt Nissans', services: ['Car Hire'], rating: 4.3, commission: '10%' },
+            { name: 'Eldoret Express', services: ['Bus Travel'], rating: 4.6, commission: '8%' },
+            { name: 'Nyaugenya', services: ['Bookings', 'Parcel'], rating: 4.2, commission: '9%' },
+            { name: 'Nyamira Express', services: ['Express Travel', 'Parcel'], rating: 4.4, commission: '8%' }
+        ];
+
+        const popularServices = {
+            flights: ['Kenya Airways', 'Ethiopian Airlines', 'Emirates', 'Qatar Airways'],
+            hotels: ['Serena Hotels', 'Intercontinental', 'Radisson Blu', 'Hilton'],
+            buses: ['Easy Coach', 'Guardian Bus', 'Coast Bus', 'Emirates Bus'],
+            safaris: ['Masai Mara', 'Amboseli', 'Tsavo', 'Lake Nakuru']
+        };
+
+        const rewardTiers = [
+            { level: 'Bronze', points: '0-999', benefits: '5% discount' },
+            { level: 'Silver', points: '1000-2499', benefits: '10% discount + Free insurance' },
+            { level: 'Gold', points: '2500+', benefits: '15% discount + Priority support + Free upgrades' }
+        ];
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            lucide.createIcons();
+            initializeApp();
+        });
+
+        function initializeApp() {
+            updatePointsDisplay();
+            populateLocalPartners();
+            setupEventListeners();
+        }
+
+        function setupEventListeners() {
+            document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+        }
+
+        function toggleMobileMenu() {
+            isMenuOpen = !isMenuOpen;
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('hidden');
+                menuBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+            }
+            lucide.createIcons();
+        }
+
+        function showPage(page) {
+            // Hide all pages
+            document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('air-page').classList.add('hidden');
+            document.getElementById('land-page').classList.add('hidden');
+            document.getElementById('water-page').classList.add('hidden');
+
+            // Show selected page
+            document.getElementById(page + '-page').classList.remove('hidden');
+            
+            // Update sidebar for transport pages
+            if (page !== 'home') {
+                document.getElementById(page + '-sidebar').innerHTML = renderSidebar();
+                lucide.createIcons();
+            }
+
+            currentPage = page;
+        }
+
+        function getCurrentTier() {
+            if (userPoints < 1000) return 'Bronze';
+            if (userPoints < 2500) return 'Silver';
+            return 'Gold';
+        }
+
+        function updatePointsDisplay() {
+            const tier = getCurrentTier();
+            document.getElementById('header-points').textContent = userPoints;
+            document.getElementById('header-tier').textContent = tier;
+            document.getElementById('mobile-points').textContent = userPoints;
+            document.getElementById('mobile-tier').textContent = tier;
+            
+            // Update sidebar points if visible
+            const sidebarPoints = document.getElementById('sidebar-points');
+            if (sidebarPoints) {
+                sidebarPoints.textContent = userPoints;
+                document.getElementById('sidebar-tier').textContent = tier;
+                updateRewardTiers();
+            }
+        }
+
+        function updateRewardTiers() {
+            const currentTier = getCurrentTier();
+            rewardTiers.forEach((tier, idx) => {
+                const tierElement = document.getElementById(`tier-${idx}`);
+                if (tierElement) {
+                    if (currentTier === tier.level) {
+                        tierElement.className = 'p-3 rounded-lg bg-amber-200 border-2 border-amber-400';
+                    } else {
+                        tierElement.className = 'p-3 rounded-lg bg-white/50';
+                    }
+                }
+            });
+        }
+
+        function populateLocalPartners() {
+            const partnersContainer = document.getElementById('local-partners');
+            if (partnersContainer) {
+                partnersContainer.innerHTML = localTransportCompanies.map((company, idx) => `
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-start mb-2">
+                            <h5 class="font-semibold text-gray-800">${company.name}</h5>
+                            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">${company.commission}</span>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <i data-lucide="star" class="w-4 h-4 text-yellow-400 mr-1"></i>
+                            <span class="text-sm text-gray-600">${company.rating}</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-3">${company.services.join(', ')}</p>
+                        <button onclick="handleBooking('${company.name}')" class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition-colors text-sm">
+                            Book with ${company.name}
+                        </button>
+                    </div>
+                `).join('');
+                lucide.createIcons();
+            }
+        }
+
+        function handleBooking(serviceType) {
+            const points = Math.floor(Math.random() * 100) + 50;
+            userPoints += points;
+            updatePointsDisplay();
+            alert(`Booking initiated for ${serviceType}! You earned ${points} Kabiru points. Redirecting to partner platform...`);
+        }
+
+        function renderSidebar() {
+            const currentTier = getCurrentTier();
+            return `
+                <div class="space-y-6">
+                    <!-- Rewards Program -->
+                    <div class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl p-6 shadow-xl border border-amber-200">
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="gift" class="w-6 h-6 text-amber-600 mr-2"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Kabiru Rewards</h3>
+                        </div>
+                        <div class="text-center mb-4">
+                            <div class="text-3xl font-bold text-amber-600" id="sidebar-points">${userPoints}</div>
+                            <div class="text-sm text-gray-600">Current Points</div>
+                            <div class="text-lg font-semibold text-amber-700" id="sidebar-tier">${currentTier} Member</div>
+                        </div>
+                        <div class="space-y-2">
+                            ${rewardTiers.map((tier, idx) => `
+                                <div id="tier-${idx}" class="${currentTier === tier.level ? 'p-3 rounded-lg bg-amber-200 border-2 border-amber-400' : 'p-3 rounded-lg bg-white/50'}">
+                                    <div class="font-semibold text-gray-800">${tier.level}</div>
+                                    <div class="text-xs text-gray-600">${tier.points} points</div>
+                                    <div class="text-xs text-green-600">${tier.benefits}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <!-- Popular Services -->
+                    <div class="bg-white/90 rounded-xl p-6 shadow-xl">
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="trending-up" class="w-5 h-5 text-blue-600 mr-2"></i>
+                            <h3 class="text-lg font-bold text-gray-800">Popular This Week</h3>
+                        </div>
+                        <div class="space-y-3">
+                            ${popularServices.flights.slice(0, 3).map(service => `
+                                <div class="flex items-center justify-between py-2 border-b border-gray-100 last:border-b-0">
+                                    <span class="text-sm text-gray-700">${service}</span>
+                                    <i data-lucide="star" class="w-4 h-4 text-yellow-400"></i>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <!-- Quick Contact -->
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 shadow-xl border border-blue-200">
+                        <h3 class="text-lg font-bold text-gray-800 mb-4">Need Assistance?</h3>
+                        <p class="text-sm text-gray-600 mb-4">Our physical office is ready to help with complaints, guidance, and client assistance.</p>
+                        <div class="space-y-2">
+                            <button class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors flex items-center justify-center">
+                                <i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+                                Call Support
+                            </button>
+                            <button class="w-full bg-gray-600 text-white py-2 rounded-md hover:bg-gray-700 transition-colors flex items-center justify-center">
+                                <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
+                                Visit Office
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+                              </html>
